@@ -1,8 +1,32 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Github } from "lucide-react"
+import { useState, useEffect } from "react"
 
 export function ProjectsSection() {
+  const [glitchActive, setGlitchActive] = useState(false)
+  const [scanlinePosition, setScanlinePosition] = useState(0)
+
+  useEffect(() => {
+    const glitchInterval = setInterval(() => {
+      if (Math.random() < 0.8) {
+        setGlitchActive(true)
+        setTimeout(() => setGlitchActive(false), 200)
+      }
+    }, 2000)
+
+    const scanlineInterval = setInterval(() => {
+      setScanlinePosition(prev => (prev + 1) % 100)
+    }, 50)
+
+    return () => {
+      clearInterval(glitchInterval)
+      clearInterval(scanlineInterval)
+    }
+  }, [])
+
   const projects = [
   {
     title: "DeCarb",
@@ -20,7 +44,7 @@ export function ProjectsSection() {
     tech: ["Next.js", "Express.js", "Firebase"],
     color: "border-red-500",
     glowColor: "shadow-red-500/20",
-    github: "https://github.com/basilrari/tedxsaintgits", // placeholder link to official page
+    github: "https://github.com/basilrari/tedxsaintgits",
   },
   {
     title: "EduFinEase",
@@ -59,55 +83,83 @@ export function ProjectsSection() {
   },
 ];
 
-
   return (
-    <section id="projects" className="py-8 sm:py-12 md:py-16 lg:py-20 px-2 xs:px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 xs:mb-8 sm:mb-12 md:mb-16 font-mono neon-glow text-primary break-words">
-          PROJECT.ARCHIVE
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-4 xs:gap-6 sm:gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className={`cyber-card ${project.color} hover:${project.glowColor} group`}>
-              <CardHeader className="p-3 xs:p-4 sm:p-6">
-                <CardTitle className="text-base xs:text-lg sm:text-xl font-bold font-mono text-foreground group-hover:text-primary transition-colors duration-300 break-words">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-3 xs:p-4 sm:p-6 pt-0 space-y-3 xs:space-y-4">
-                <p className="text-muted-foreground leading-relaxed text-xs xs:text-sm sm:text-base">{project.description}</p>
-
-                <div className="flex flex-wrap gap-1 xs:gap-2">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-1.5 xs:px-2 py-0.5 xs:py-1 bg-muted/30 border border-muted rounded text-xs font-mono break-words"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {project.github && (
-                  <div className="flex gap-2 xs:gap-3 pt-2 xs:pt-3 sm:pt-4">
-                    <Button
-                      asChild
-                      size="sm"
-                      className="cyber-card bg-primary/20 hover:bg-primary/30 border-primary/30 text-xs xs:text-sm px-2 xs:px-3 py-1 xs:py-2 h-auto"
-                    >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-3 xs:w-4 h-3 xs:h-4 mr-1 xs:mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <div className="relative overflow-hidden">
+      {/* Cyberpunk Grid Background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px'
+        }} />
       </div>
-    </section>
+
+      {/* Animated Scanlines */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-10"
+        style={{
+          background: `linear-gradient(180deg, transparent ${scanlinePosition}%, rgba(0, 255, 255, 0.1) ${scanlinePosition + 1}%, transparent ${scanlinePosition + 2}%)`
+        }}
+      />
+
+      <section id="projects" className="py-8 sm:py-12 md:py-16 lg:py-20 px-2 xs:px-4 relative">
+        <div className="max-w-6xl mx-auto">
+          {/* Enhanced Glitch Title */}
+          <div className="relative mb-6 xs:mb-8 sm:mb-12 md:mb-16">
+            <h2 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center font-mono text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 ${glitchActive ? 'animate-pulse' : ''}`}>
+              {'>> PROJECT.ARCHIVE <<'}
+            </h2>
+            {glitchActive && (
+              <h2 className="absolute inset-0 text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center font-mono text-red-500 opacity-70 transform translate-x-1 translate-y-1">
+                {'>> PR0J3CT.4RCH1V3 <<'}
+              </h2>
+            )}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4 xs:gap-6 sm:gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className={`cyber-card ${project.color} hover:${project.glowColor} group`}>
+                <CardHeader className="p-3 xs:p-4 sm:p-6">
+                  <CardTitle className="text-base xs:text-lg sm:text-xl font-bold font-mono text-foreground group-hover:text-primary transition-colors duration-300 break-words">
+                    {project.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-3 xs:p-4 sm:p-6 pt-0 space-y-3 xs:space-y-4">
+                  <p className="text-muted-foreground leading-relaxed text-xs xs:text-sm sm:text-base">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-1 xs:gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-1.5 xs:px-2 py-0.5 xs:py-1 bg-muted/30 border border-muted rounded text-xs font-mono break-words"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {project.github && (
+                    <div className="flex gap-2 xs:gap-3 pt-2 xs:pt-3 sm:pt-4">
+                      <Button
+                        asChild
+                        size="sm"
+                        className="cyber-card bg-primary/20 hover:bg-primary/30 border-primary/30 text-xs xs:text-sm px-2 xs:px-3 py-1 xs:py-2 h-auto"
+                      >
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-3 xs:w-4 h-3 xs:h-4 mr-1 xs:mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
