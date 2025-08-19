@@ -35,10 +35,10 @@ export function SkillsSection() {
   ]
 
   const softSkills = [
-    { name: "Problem-solving", icon: "⚡", status: "OPTIMAL" },
-    { name: "Critical Thinking", icon: "🧠", status: "ACTIVE" },
-    { name: "Leadership", icon: "👑", status: "ENHANCED" },
-    { name: "Teamwork", icon: "🤝", status: "SYNCED" }
+    { name: "Problem-solving", status: "OPTIMAL" },
+    { name: "Critical Thinking", status: "ACTIVE" },
+    { name: "Leadership",  status: "ENHANCED" },
+    { name: "Teamwork", status: "SYNCED" }
   ]
 
   const additionalTech = ["C", "HTML", "CSS", "Tailwind CSS", "MySQL"]
