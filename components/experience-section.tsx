@@ -34,25 +34,25 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-20 px-4 bg-muted/20">
+    <section id="experience" className="py-8 sm:py-12 md:py-16 lg:py-20 px-2 xs:px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-mono neon-glow text-primary">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 xs:mb-8 sm:mb-12 md:mb-16 font-mono neon-glow text-primary break-words">
           EXPERIENCE.LOG
         </h2>
 
-        <div className="space-y-8">
+        <div className="space-y-4 xs:space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
             <Card key={index} className="cyber-card">
-              <CardContent className="p-8">
-                <div className={`border-l-4 ${exp.color} pl-6`}>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-xl font-bold text-foreground font-mono">{exp.title}</h3>
+              <CardContent className="p-3 xs:p-4 sm:p-6 md:p-8">
+                <div className={`border-l-4 ${exp.color} pl-3 xs:pl-4 sm:pl-6`}>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 xs:mb-3 sm:mb-4">
+                    <h3 className="text-base xs:text-lg sm:text-xl font-bold text-foreground font-mono break-words mb-1 md:mb-0">{exp.title}</h3>
                     <div className="flex flex-col md:items-end">
-                      <span className="text-secondary font-semibold">{exp.company}</span>
-                      <span className="text-sm text-muted-foreground">{exp.period}</span>
+                      <span className="text-secondary font-semibold text-sm xs:text-base break-words">{exp.company}</span>
+                      <span className="text-xs xs:text-sm text-muted-foreground">{exp.period}</span>
                     </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                  <p className="text-muted-foreground leading-relaxed text-xs xs:text-sm sm:text-base">{exp.description}</p>
                 </div>
               </CardContent>
             </Card>

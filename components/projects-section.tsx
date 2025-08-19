@@ -61,28 +61,28 @@ export function ProjectsSection() {
 
 
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-8 sm:py-12 md:py-16 lg:py-20 px-2 xs:px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-mono neon-glow text-primary">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 xs:mb-8 sm:mb-12 md:mb-16 font-mono neon-glow text-primary break-words">
           PROJECT.ARCHIVE
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-4 xs:gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <Card key={index} className={`cyber-card ${project.color} hover:${project.glowColor} group`}>
-              <CardHeader>
-                <CardTitle className="text-xl font-bold font-mono text-foreground group-hover:text-primary transition-colors duration-300">
+              <CardHeader className="p-3 xs:p-4 sm:p-6">
+                <CardTitle className="text-base xs:text-lg sm:text-xl font-bold font-mono text-foreground group-hover:text-primary transition-colors duration-300 break-words">
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+              <CardContent className="p-3 xs:p-4 sm:p-6 pt-0 space-y-3 xs:space-y-4">
+                <p className="text-muted-foreground leading-relaxed text-xs xs:text-sm sm:text-base">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1 xs:gap-2">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 bg-muted/30 border border-muted rounded text-xs font-mono"
+                      className="px-1.5 xs:px-2 py-0.5 xs:py-1 bg-muted/30 border border-muted rounded text-xs font-mono break-words"
                     >
                       {tech}
                     </span>
@@ -90,14 +90,14 @@ export function ProjectsSection() {
                 </div>
 
                 {project.github && (
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-2 xs:gap-3 pt-2 xs:pt-3 sm:pt-4">
                     <Button
                       asChild
                       size="sm"
-                      className="cyber-card bg-primary/20 hover:bg-primary/30 border-primary/30"
+                      className="cyber-card bg-primary/20 hover:bg-primary/30 border-primary/30 text-xs xs:text-sm px-2 xs:px-3 py-1 xs:py-2 h-auto"
                     >
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
+                        <Github className="w-3 xs:w-4 h-3 xs:h-4 mr-1 xs:mr-2" />
                         Code
                       </a>
                     </Button>
