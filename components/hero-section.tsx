@@ -89,7 +89,7 @@ export function HeroSection() {
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 sm:gap-5 lg:gap-6">
-            {["Node.js", "Blockchain", "Web3"].map((tech) => (
+            {["Node.js", "Python", "Web3"].map((tech) => (
               <div
                 key={tech}
                 className="px-6 sm:px-7 py-3 sm:py-3.5 bg-muted/30 border border-muted rounded-full text-base sm:text-lg lg:text-xl text-muted-foreground hover:border-accent hover:text-accent transition-colors duration-200 backdrop-blur-sm"
