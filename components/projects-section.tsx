@@ -4,60 +4,61 @@ import { Github } from "lucide-react"
 
 export function ProjectsSection() {
   const projects = [
-    {
-      title: "DeCarb",
-      description: "Carbon credit marketplace built on Celo Blockchain with integrated payment solutions.",
-      tech: ["Celo Blockchain", "Razorpay", "Web3Auth", "Next.js","Express.js"],
-      color: "border-accent",
-      glowColor: "shadow-accent/20",
-      github: "https://github.com/DeCarb-Marketplace",
-    },
-    {
-      title: "TEDx Saintgits",
-      description:
-        "Contributed to organizing and executing TEDx Saintgits, handling technical coordination, event workflows, and cross-team collaboration.",
-      tech: ["Next.js", "Express.js", "Firebase"],
-      color: "border-red-500",
-      glowColor: "shadow-red-500/20",
-      github: "https://github.com/basilrari/tedxsaintgits", // placeholder link to official page
-    },
-    {
-      title: "EduFinEase",
-      description:
-        "Comprehensive financial management system with interactive dashboards for educational institutions.",
-      tech: ["React.js", "Node.js", "Firebase", "Chart.js"],
-      color: "border-secondary",
-      glowColor: "shadow-secondary/20",
-      github: "https://github.com/EduFinEase",
-    },
-    
-    {
-      title: "KDrama Insights Dashboard",
-      description: "Advanced analytics dashboard providing insights into Korean drama trends and viewer preferences.",
-      tech: ["Python", "IBM Cognos", "Data Analytics", "Visualization"],
-      color: "border-chart-4",
-      glowColor: "shadow-chart-4/20",
-      github: "https://github.com/Gopi-krishnan-77/ibm-cognos",
-    },
-    {
-      title: "AlertEye",
-      description:
-        "An AI-powered surveillance and alerting system designed for proactive threat detection and real-time notifications.",
-      tech: ["Python", "OpenCV", "TensorFlow", "Flask"],
-      color: "border-pink-500",
-      glowColor: "shadow-pink-500/20",
-      github: "https://github.com/Gopi-krishnan-77/Alert-Eye/",
-    },
-    {
-      title: "DeEx3 DAO",
-      description:
-        "Decentralized research platform enabling collaborative scientific research through blockchain technology.",
-      tech: ["Solidity", "React.js", "Web3", "IPFS"],
-      color: "border-primary",
-      glowColor: "shadow-primary/20",
-      
-    },
-  ]
+  {
+    title: "DeCarb",
+    description:
+      "Carbon credit marketplace built on the Celo Blockchain, enabling transparent trading of carbon offsets. Integrated Razorpay for seamless payments and Web3Auth for secure wallet authentication. The platform promotes sustainability by bridging blockchain technology with real-world climate action.",
+    tech: ["Celo Blockchain", "Razorpay", "Web3Auth", "Next.js", "Express.js"],
+    color: "border-accent",
+    glowColor: "shadow-accent/20",
+    github: "https://github.com/DeCarb-Marketplace",
+  },
+  {
+    title: "TEDx Saintgits",
+    description:
+      "Developed of the official TEDx Saintgits website and managed the entire technical ecosystem. Contributed to event workflows, ticketing, and live updates, while collaborating closely with multiple teams to ensure a smooth event execution. The website served as the central hub for registrations, speaker details, and updates.",
+    tech: ["Next.js", "Express.js", "Firebase"],
+    color: "border-red-500",
+    glowColor: "shadow-red-500/20",
+    github: "https://github.com/basilrari/tedxsaintgits", // placeholder link to official page
+  },
+  {
+    title: "EduFinEase",
+    description:
+      "A financial management system designed for educational institutions, featuring interactive dashboards, automated fee tracking, and analytics-driven insights. Simplified financial operations while empowering administrators with clear visualizations and reporting tools.",
+    tech: ["React.js", "Node.js", "Firebase", "Chart.js"],
+    color: "border-secondary",
+    glowColor: "shadow-secondary/20",
+    github: "https://github.com/EduFinEase",
+  },
+  {
+    title: "KDrama Insights Dashboard",
+    description:
+      "An advanced analytics dashboard offering data-driven insights into Korean drama trends and viewer preferences. Utilized IBM Cognos for visualization and Python-based preprocessing to analyze datasets, helping identify popularity patterns and audience demographics.",
+    tech: ["Python", "IBM Cognos", "Data Analytics", "Visualization"],
+    color: "border-chart-4",
+    glowColor: "shadow-chart-4/20",
+    github: "https://github.com/Gopi-krishnan-77/ibm-cognos",
+  },
+  {
+    title: "AlertEye",
+    description:
+      "An AI-powered surveillance system for proactive threat detection. Built with OpenCV and TensorFlow to detect suspicious activities in real-time, coupled with Flask-based APIs for seamless alerting. Designed to enhance security by sending instant notifications during potential breaches.",
+    tech: ["Python", "OpenCV", "TensorFlow", "Flask"],
+    color: "border-pink-500",
+    glowColor: "shadow-pink-500/20",
+    github: "https://github.com/Gopi-krishnan-77/Alert-Eye/",
+  },
+  {
+    title: "DeEx3 DAO",
+    description:
+      "A decentralized research collaboration platform where scientists and researchers can publish, review, and collaborate on projects securely. Utilizes Solidity smart contracts, IPFS for decentralized storage, and Web3 integration to enable transparent, community-driven scientific innovation.",
+    tech: ["Solidity", "React.js", "Web3", "IPFS"],
+    color: "border-primary",
+    glowColor: "shadow-primary/20",
+  },
+];
+
 
   return (
     <section id="projects" className="py-20 px-4">
