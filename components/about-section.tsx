@@ -72,8 +72,7 @@ export function AboutSection() {
                     </p>
                     <p>
                       Graduated in <span className="text-accent">Computer Science & Engineering</span> with a minor in{" "}
-                      <span className="text-accent">Robotics & Automation</span> from Saintgits College of Engineering,
-                      carrying a CGPA of <span className="text-secondary">8.42</span> through the grid.
+                      <span className="text-accent">Robotics & Automation</span> from Saintgits College of Engineering
                     </p>
                     <p>
                       My mission: engineer solutions that merge <span className="text-accent">innovation</span> with{" "}
