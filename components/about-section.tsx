@@ -72,7 +72,7 @@ export function AboutSection() {
                     </p>
                     <p>
                       Graduated in <span className="text-accent">Computer Science & Engineering</span> with a minor in{" "}
-                      <span className="text-accent">Robotics & Automation</span> from Saintgits College of Engineering
+                      <span className="text-accent">Robotics & Automation</span> from Saintgits College of Engineering.
                     </p>
                     <p>
                       My mission: engineer solutions that merge <span className="text-accent">innovation</span> with{" "}
