@@ -27,6 +27,15 @@ export function ExperienceSection() {
 
   const experiences = [
     {
+      title: "Web Developer Intern",
+      company: "Cooee",
+      period: "Current",
+      description:
+        "Currently migrating the company's WordPress website to a modern Next.js stack, improving SEO, performance, and UX consistency.",
+      color: "border-l-green-400",
+      current: true,
+    },
+    {
       title: "Intern",
       company: "Benfi Consultants Pte Ltd",
       period: "Previous",
@@ -95,16 +104,28 @@ export function ExperienceSection() {
             {experiences.map((exp, index) => (
               <Card key={index} className="cyber-card">
                 <CardContent className="p-3 xs:p-4 sm:p-6 md:p-8">
-                  <div className={`border-l-4 ${exp.color} pl-3 xs:pl-4 sm:pl-6`}>
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 xs:mb-3 sm:mb-4">
-                      <h3 className="text-base xs:text-lg sm:text-xl font-bold text-foreground font-mono break-words mb-1 md:mb-0">{exp.title}</h3>
-                      <div className="flex flex-col md:items-end">
-                        <span className="text-secondary font-semibold text-sm xs:text-base break-words">{exp.company}</span>
-                        <span className="text-xs xs:text-sm text-muted-foreground">{exp.period}</span>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed text-xs xs:text-sm sm:text-base">{exp.description}</p>
-                  </div>
+                  <div className={`border-l-4 ${exp.color} pl-3 xs:pl-4 sm:pl-6 ${exp.current ? 'shadow-[0_0_12px_#22c55e]' : ''}`}>
+  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 xs:mb-3 sm:mb-4">
+    <h3 className="text-base xs:text-lg sm:text-xl font-bold text-foreground font-mono break-words mb-1 md:mb-0 flex items-center gap-2">
+      {exp.title}
+      {exp.current && (
+        <span className="text-xs px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded-full animate-pulse">
+          Currently Working
+        </span>
+      )}
+    </h3>
+    <div className="flex flex-col md:items-end">
+      <span className="text-secondary font-semibold text-sm xs:text-base break-words">
+        {exp.company}
+      </span>
+      <span className="text-xs xs:text-sm text-muted-foreground">{exp.period}</span>
+    </div>
+  </div>
+  <p className="text-muted-foreground leading-relaxed text-xs xs:text-sm sm:text-base">
+    {exp.description}
+  </p>
+</div>
+
                 </CardContent>
               </Card>
             ))}
