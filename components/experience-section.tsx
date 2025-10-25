@@ -104,7 +104,12 @@ export function ExperienceSection() {
             {experiences.map((exp, index) => (
               <Card key={index} className="cyber-card">
                 <CardContent className="p-3 xs:p-4 sm:p-6 md:p-8">
-                  <div className={`border-l-4 ${exp.color} pl-3 xs:pl-4 sm:pl-6 ${exp.current ? 'shadow-[0_0_12px_#22c55e]' : ''}`}>
+                 <div
+  className={`border-l-4 ${exp.color} pl-3 xs:pl-4 sm:pl-6 ${
+    exp.current ? 'relative before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-green-400 before:blur-[6px] before:opacity-80' : ''
+  }`}
+>
+
   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 xs:mb-3 sm:mb-4">
     <h3 className="text-base xs:text-lg sm:text-xl font-bold text-foreground font-mono break-words mb-1 md:mb-0 flex items-center gap-2">
       {exp.title}
