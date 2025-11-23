@@ -27,7 +27,7 @@ export function ExperienceSection() {
 
   const experiences = [
     {
-      title: "Web Developer Intern",
+      title: "Full Stack Developer",
       company: "Cooee",
       period: "Current",
       description:
